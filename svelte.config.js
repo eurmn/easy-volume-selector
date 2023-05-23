@@ -6,8 +6,12 @@ const config = {
   preprocess: vitePreprocess(),
 
   kit: {
-    adapter: adapter()
-  }
+    adapter: adapter(),
+    appDir: 'app',
+    paths: {
+      base: process.env.NODE_ENV === 'production' ? '/easy-volume-selector' : '/',
+    }
+  },
 };
 
 export default config;

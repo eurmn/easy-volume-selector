@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { scale } from 'svelte/transition';
-
+	
 	let position: GeolocationPosition;
     let error: string | undefined;
 
@@ -10,7 +9,7 @@
 	    (p) => (position = p),
 	    (e) => error = e.message, {
 	    enableHighAccuracy: true,
-	    timeout: 5000,
+	    timeout: 20000,
 	    maximumAge: 0
 	  });
 	});
